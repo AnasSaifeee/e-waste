@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title> {% block title%} {%endblock title%}| Hello, world!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      .nav-1
+
+      {
+       background-color:#75B3A4;
+        height: 65px;
+        z-index: 1;
+      }
+
+      
+      .nav-2
+      { 
+        
+       
+        background-color:#93CFBB;
+     
+      }
+      a
+      {
+        text-transform: uppercase;
+        margin: 0px 15px 0px 15px;
+        
+      }
+      .ls-btn
+      {
+        text-transform: uppercase;
+        font: 'roboto';
+        font-weight: 400;
+        font-size: 22px;
+        color: white;
+        width: 207px;
+        height: 58px;
+        border: 1px solid #75B3A4;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 40px;
+        transform: translateY(3px);
+      }
+      .nav-2-text
+      {
+        font:'roboto';
+        font-weight: 400;
+        font-size: 22px;
+        color: white;
+        line-height: 50px;
+        
+      }
+      .A 
+      {
+        width: 45px;
+        height: 45px;
+        border: 4px solid #FFFFFF;
+        border-radius: 12px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 2px;
+        line-height: 10px;
+      }
+      .btn-A
+    {
+     
+      transform: translateX(-50px);
+    }
+    .theme
+    { 
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 18px;
+     color: #FFFFFF;
+     transform: translateX(-100px);
+    }
+    .dropdown
+    { 
+      height: 65px;
+      width:180px;
+      
+    } 
+
+    .language
+    {
+     
+      height: 76px;
+      width:150px;
+      line-height:50px;
+      width: 180px;
+      height: 76px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 20px;
+      color: #FFFFFF;
+    }
+    .language-2
+    {
+     width: 150px;
+    transform: translateX(20px);
+    
+    }
+    .dash
+    {
+      
+      line-height: 45px;
+    
+    }
+    .theme-1
+    {
+      transform: translateX(10px);
+    }
+    .theme-2
+    {
+      transform: translateX(-10px);
+    }
+    .nav-2-text
+    {
+      font-family: 'Roboto';
+   font-weight: 400;
+     font-size: 22px;
+     
+    }
+    .logo
+    {
+      width: 70px;
+      transform: translateX(60px);
+    }
+    .language-2 a
+    {
+      
+      width: 120px;
+      text-align: center;
+    }
+   
+    .dropdown li
+    {
+      background-color: #75B3A4;
+    }
+    @media screen and (max-width: 1075px) {
+      .logo
+      {
+        transform: translateX(10px);
+      }
+      .txt 
+      {
+        font-size: 20px;
+      }
+    .A
+    {
+      width: 40px;
+      height: 40px;
+      font-size: 15px;
+    }
+    
+    .dropdown
+    {
+      
+      height: 60px;
+      width:130px;
+      transform: translate(-40px,-7px);
+    }
+    .language
+    { 
+      height: 60px;
+      width:130px;
+      font-size: 19px;
+    }
+    .theme
+    {
+      width: 150px;
+      font-size: 17px;
+    }
+   
+  }
+  .A:hover
+  {
+    color: aquamarine;
+    border-color:aquamarine ;
+  }
+  .theme-1:hover
+  {
+    color: white;
+  }
+  .theme-2:hover{
+    color: black;
+  }
+  .nav-2-text:hover
+  {
+    color: aquamarine !important;
+  }
+  .ls-btn:hover
+  {
+    background-color: aquamarine;
+  }
+  @media screen and (max-width: 576px) {
+     .txt
+     {
+      font-size: 18px;
+     }
+    
+    .A
+    {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+      border-radius: 10px;
+      
+    }
+    .btn-A
+    {
+       transform: translateX(-60px);
+      
+       
+    }
+    .dropdown
+    {
+      height: 60px;
+      width:100px;
+      transform: translate(-40px,-7px);
+    }
+    .language
+    { 
+      height: 60px;
+      width:130px;
+      font-size: 16px;
+    }
+    .theme
+    {
+      width: 100px;
+      font-size: 14px;
+      transform: translateX(-60px);
+    }
+    .theme-1
+    {
+      
+      margin-left: 10px;
+    }
+    .theme-2
+    {
+     transform: translateX(-90px);
+    }
+   .dash
+   {
+    transform: translate(-75px,-4px);
+   }
+  }
+  
+  @media screen and (max-width:450px) {
+    .A
+    {
+      display: none;
+    }
+  }
+  @media screen and (max-width:308px) {
+   .dropdown{
+    transform: translate(2px,-8px);
+   }
+   .language
+   {
+    font-size: 12px;
+   }
+   .theme
+   {
+    margin-top: 3px;
+    transform: translateX(-30px);
+    font-size: 12px;
+   }
+   
+    .theme-2
+    {
+     transform: translateX(-70px);
+    }
+    .dash
+    {
+      transform: translate(-50px,-4px);
+    }
+  }
+
+  .sec
+      {
+       
+        margin-left: 40px;
+      }
+      .sec a{
+        text-transform: uppercase;
+
+        font-family: 'roboto';
+        font-weight: 400;
+      }
+    
+    </style>
+
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-light  nav-1">
+      <div class="d-flex justify-content-end container-fluid nav-1a">
+       
+              <div class="d-flex justify-content-centre theme">
+                <a class="nav-link theme theme-1 txt" aria-current="page" href="#">light</a>
+                <div class="dash">|</div>
+                <a class="nav-link theme theme-2 txt" aria-current="page" href="#">dark</a>
+              </div>
+             
+              <div class="btn-A">
+                <button class="btn A A1 txt">A+</button>
+                <button class="btn A A2 txt">A</button>
+                <button class="btn A A3 txt">A-</button>
+              </div>
+              
+              <div class="dropdown">
+                <a class="btn dropdown-toggle language text-white txt" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                 English
+                </a>
+              
+                <ul class="dropdown-menu language-2" aria-labelledby="dropdownMenuLink">
+                  <li class="language-2a"><a class="dropdown-item language text-black" href="#">hindi</a></li>
+                  
+                </ul>
+              </div>
+           
+        </div>
+     
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light  nav-2">
+      <div class="container-fluid nav-2a">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle shadow-4 logo"
+   alt="Avatar" />
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class=" collapse navbar-collapse nav-2b" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-2c">
+            <li class="nav-item">
+              <a class="nav-link text-white nav-2-text txt" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-2-text txt" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-2-text txt " href="/guidelines">User guidelines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white nav-2-text txt " href="#">contact</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-white nav-2-text txt" href="#">FAQs</a>
+            </li>
+            <li>
+              <button class="btn ls-btn txt">login / signup</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block body%} {%endblock body%}
+
+    <div class="container-fluid d-flex justify-content-center sec-1">
+      <footer class="container-fluid py-5">
+        <div class="container-fluid d-flex justify-content-center row">
+          <div class="col-6 col-md-2 mb-3 sec-2 sec">
+            <h2>EXTERNAL LINKS</h2>
+            <ul class="lst nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lorem, ipsum.</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lorem, ipsum dolor.</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lorem ipsum dolor sit amet.</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lorem, ipsum.</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lorem, ipsum dolor.</a></li>
+            </ul>
+          </div>
+    
+          <div class=" col-6 col-md-2 mb-3 sec-3 sec">
+            <h2>CONTACT</h2>
+            <ul class="lst nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-twitter"></i> Twitter</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-facebook"></i> Facebook</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-envelope"></i> E-mail</a></li>
+           
+            </ul>
+          </div>
+    
+        </div>
+    
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top sec-3">
+          <p>© 2022 TECHVIORS 2022, All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#">Terms of Service</a></li>
+            <li class="ms-3"><a class="link-dark" href="#">Privacy Policy</a></li>
+            
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <!-- <a class="navbar-brand" href="#"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle shadow-4 profile-photo"
+      alt="Avatar" /></a> -->
+    <!-- <div class="container photo ">
+      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
+   alt="Avatar" />
+     </div> -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    
+  </body>
+</html>

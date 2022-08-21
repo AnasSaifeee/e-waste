@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title%}
+{% block body %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+  </head>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    body{
+        display: block;
+        height: 100vh;
+        width: 100vw;
+    }
+    .secondpart{
+        margin-top: 2rem;
+        top: 0%;
+        background: #EEEEEE;
+        width: 100vw;
+        min-height: 500px;
+    }
+    .slideoneheading{
+        position: absolute;
+        width: 30vw;
+        height: 10%;
+        left: 10%;
+        top: 20%;
+        font-family: 'Bai Jamjuree';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3vw;
+        line-height: 100%;
+        color: #019934;
+    }
+    .slideonepara{
+         position: absolute;
+         width: 40vw;
+         height: 5%;
+         left: 17%;
+         top: 40%;
+         font-family: 'Roboto';
+         font-style: normal;
+         font-weight: 400;
+         font-size:1.5vw;
+         line-height: 125%;
+         color: #216B3F;
+    }
+
+    .registerbttn{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      width: 10vw;
+      height: 10%;
+      left: 17%;
+      top: 60%;
+      background: #216B3F;
+      border-radius: none;
+      font-size: 1.4vw;
+      text-align: center;
+      justify-content: center;
+    }
+    .parasecond{
+      position: relative;
+      width: 32rem;
+      left: 20%;
+      top: 32%;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 125%;
+/* or 30px */
+   color: #577663;
+  }
+  .readmore{
+    position: relative;
+    left: 20%;
+    top: 35%;
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  .aboutus{
+    position: relative;
+    width: fit-content;
+    left: 20%;
+    top: 30%;
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 100%;
+    color: #019934;
+  }
+  .image{
+     position: absolute;
+     top: 20%;
+     left: 65%;
+     width: 18%;
+     display: block;
+  }
+  .secondcontainer{
+    position: relative;
+    top: 9rem;
+  }
+  .firstslideimage{
+     width: 100%;
+     height: 100%;
+  }
+  .services{
+    text-align: center;
+  }
+  .mobile-firstslide{
+          display: none;
+          background: #216B3F;
+          text-align: center;
+          min-height: 300px;
+          padding: 1rem;
+      }
+   .row{
+      display: flex;
+      justify-content: center;
+   }
+   .col{
+     margin-top: 1rem;
+   }
+  @media only screen and (max-width:700px) {
+      .firstpart{
+          display: none;
+      }
+      .parasecond{
+           width: 15rem;
+      }
+      .services{
+         font-size: 3rem;
+      }
+      .secondcontainer{
+          top: 4rem;
+      }
+      .mobile-firstslide{
+          display: block;
+
+      }
+      .mobile-recycle-img{
+          width: 30%;
+          display: flex;
+          align-items: center;
+          text-align: center;
+      }
+  }
+  @media only screen and (max-width:330px) {
+      .parasecond{
+           width: 10rem;
+           font-size: 20px;
+      }
+      .firstpart{
+          display: none;
+      }
+      .secondcontainer{
+          top: 4rem;
+      }
+  }
+
+</style>
+  <body>
+
+    
+    <div class = "container-fluid m-0 p-0 mobliecontainer">
+      <div class = "container-fluid mobile-firstslide">
+          <h1 style="font-size:40px ;">Example headline.</h1>
+          <p style="font-size: 24px;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <a class="btn btn-lg btn-primary my-3 mt-3" href="#" role="button">register</a>
+      </div>
+    </div>
+   
+    <div class = "container-fluid p-0 m-0 mw-100 firstpart">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/banner.png" class="d-block w-100 firstslideimage" alt="...">
+                  <div class = "text-start">
+                    <h1 class = "slideoneheading">Example headline.</h1>
+                    <p class = "slideonepara">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <a class="btn btn-lg btn-primary registerbttn" href="#" role="button">register</a>
+                    <img class = "image" src="/static/rrrrrrh.png" class="d-block " alt="...">
+                  </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/banner.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/banner.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+    
+    <div class = "container-fluid px-0 mx-0 secondpart">  
+      <div class = "container mw-100 mh-100 secondcontainer">
+          <h2 class = "aboutus">About us</h2>
+          <p class ="parasecond">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus neque id, aut
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus neque id, aut </p>
+          <a class = "readmore " href="#">Read more</a>
+      </div>
+    </div>
+
+    <div class="container my-3">
+      <h1 class = "services">Services</h1>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 mw-100 p-0 m-0">
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="#">
+            <img src="/static/schedule_pickup_sm.png" class="d-block w-100" alt="...">
+            <h5>Schedule Pickup</h5><p>Donate ewaste</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="">
+              <img src="/static/work_with_us_sm.png" class="d-block w-100" alt="...">
+              <h5>Work With Us</h5><p>Be a Kabaade</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="#">
+              <img src="/static/create_awareness_small.png" class="d-block w-100" alt="...">
+              <h5>Create Awareness</h5><p>Know the Cause</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="#">
+              <img src="/static/connect_with_us_small.png" class="d-block w-100" alt="...">
+              <h5>Connect With Us</h5><p>join hands as an NGO</p>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card shadow-sm">
+              <a href="#">
+                <img src="/static/your_impact_sm.png" class="d-block w-100" alt="...">
+                <h5>Your Impact</h5><p>Your Carbon footprint</p>
+              </a>
+            </div>
+          </div>
+      
+         
+        </div>
+      </div>
+
+
+   
+  </body>
+</html>
+{% endblock body %}

@@ -1,0 +1,193 @@
+{% extends 'dashboard.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Fengyuan Chen's Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"
+        integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"
+        integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+        
+</head>
+<style>
+   
+</style>
+<body>
+  <div class = container>
+    <form class="needs-validation"  method="post" action="/donor_form">
+        {% csrf_token %}
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="email"required>
+                <div class="invalid-feedback">
+                    Please enter your email address.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address1" class="form-label">Address</label>
+                <input type="text" class="form-control" name="address1" id="address1" placeholder="Address"required>
+                <div class="invalid-feedback">
+                    Please enter your address.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label"></label>
+                <input type="text" class="form-control" name="address2" id="address2" placeholder="Address line 2"required>
+                <div class="invalid-feedback">
+                    Please enter your address.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="district" class="form-label">District</label>
+                <input type="text" class="form-control" name="district" id="district" placeholder="District"required>
+                <div class="invalid-feedback">
+                    Please enter your address.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" name="city" id="city" placeholder="city"required>
+            </div>
+
+            <div class="col-12">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" name="state" id="state" placeholder="State"required>
+            </div>
+
+            <div class="col-12">
+                <label for="pincode" class="form-label">Pincode</label>
+                <div class="input-group has-validation">
+                    <input type="phone" class="form-control" name="pincode" id="pincode" placeholder="Pincode"required>
+                    <div class="invalid-feedback">
+                        Your pincode is required.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <label for="contact_no" class="form-label">Conact Number</label>
+                <div class="input-group has-validation">
+                    <input type="phone" class="form-control" name="contact_no" id="contact_no" placeholder="Contact_no"
+                        required>
+                    <div class="invalid-feedback">
+                        Your contact number is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="date_s" class="form-label">Choose Date for pick-up</label>
+                <br>
+                <input id="datepicker" name="date_s">
+            </div>
+
+            <div class = "col-12">
+                <label for="time" class="form-label">Choose Time for pick-up</label><br>
+                 <select class="browser-default custom-select" name="time">
+                    <option selected></option>
+                    <option value="1">7 AM - 10 AM</option>
+                    <option value="2">10 AM - 1 PM</option>
+                    <option value="3">1 PM - 4 PM</option>
+                    <option value="4">4 PM - 7 PM</option>
+                    <option value="5">7 PM - 10 PM</option>
+                </select>
+            </div>  
+            <div class = "col-12">
+                <h5>Add Ewaste Detail:</h5>
+                <h6> Item 1:</h6>
+            </div>
+            <div class="col-12">
+                <label for="ename" class="form-label">Ewaste Name</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" name="ename" id="ename" placeholder="EwasteName"required>
+                </div>
+
+                <label for="quantity" class="form-label">quantity</label>
+                <div class="input-group has-validation">
+                    <input type="number" class="form-control" name="quantity" id="quantity" placeholder="quantity"required>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="EwasteType" class="form-label">Ewaste Type</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" name="EwasteType" id="EwasteType" placeholder="EwasteType"required>
+                </div>
+            </div>
+
+            <div class ="col-12">
+                <label for="size" class="form-label">E-waste Size</label><br>
+                 <select class="browser-default custom-select" name="size">
+                    <option selected></option>
+                    <option value="1">>=50 inch</option>
+                    <option value="2">50 inch to 100 inch</option>
+                    <option value="2">100 inch to 150 inch</option>
+                    <option value="2">others</option>
+                </select>
+            </div>     
+            
+            <div class="col-12">
+                <label for="weight" class="form-label">Ewaste Weight</label>
+                <div class="input-group has-validation">
+                    <input type="number" class="form-control" name="weight" id="weight" placeholder="Weight"required>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="e_img" class="form-label">Upload image</label>
+                <div class="col-md-6 mb-4">
+                    <div class="file-field">
+                        <div class="btn btn-mdb-color btn-rounded float-left">
+                            <input type="file" name="e_img1" id="e_img1">
+                        </div>
+                        <div class="btn btn-mdb-color btn-rounded float-left">
+                            <input type="file" name="e_img2" id="e_img2">
+                        </div>
+                        <div class="btn btn-mdb-color btn-rounded float-left">
+                            <input type="file" name="e_img3" id="e_img3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class = "col-12">
+            <button class="w-25 btn btn-primary btn-lg" type="submit">Add New Items</button>
+        </div>
+
+        <div class="col-12 mb-3">
+            <label for="Comment" class="form-label"><h6>Add Comment</h6></label>
+            <textarea class="form-control" id="Comment" rows="3"></textarea>
+        </div>
+        <div class = "col-12">
+             <button class="btn btn-primary btn-lg" type="submit">Confirm and Send Request</button>
+             <button class="btn btn-primary btn-lg" type="submit">Save as draft</button>
+        </div>
+    </form>
+  </div>
+
+
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+</body>
+
+</html>
+
+{% endblock body %}

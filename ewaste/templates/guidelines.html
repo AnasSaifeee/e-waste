@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+{%block body%}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <style>
+        .fw-light {
+            font-family: 'Bai Jamjuree';
+            font-style: normal;
+            color: #389DFF;;
+            font-size: 64px;
+            line-height: 100%;
+            text-align: center;
+        }
+
+
+        .card {
+            background: #d1cfcf;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 13px;
+            text-align: center;
+            align-items: center;
+            width: 360px;
+            height: 540px;
+            /* left: 50px; */
+            padding-top: 10px;
+            margin-bottom: 20px;
+            transition: 1s;
+
+        }
+
+        .line1 {
+            border-top: 1px solid #389DFF;;
+            width: 327px;
+            height: 0px;
+            margin-top: -30px;
+
+        }
+
+        .rounded-circle {
+            
+            z-index: 2;
+            
+        }
+
+        .cardrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* transform: translateX(calc(var(--bs-gutter-x) * -0.8)); */
+        }
+
+        .registration {
+            font-family: 'Bai Jamjuree';
+            font-style: normal;
+            color: #389DFF;;
+            font-size: 40px;
+            line-height: 100%;
+            text-align: center;
+        }
+
+        .subhead {
+            margin-top: -190px;
+        }
+
+
+        .card-title {
+
+            top: 550px;
+
+            font-family: 'Bai Jamjuree';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 41px;
+            line-height: 100%;
+            /* identical to box height, or 41px */
+            line-height: 100%;
+            padding-top: inherit;
+            text-align: center;
+
+            /* Primary/Verde Grama */
+
+            color: #389DFF;;
+        }
+
+        .card-text {
+
+            width: 290px;
+            height: 180px;
+            left: 128px;
+            top: 757px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 125%;
+            /* or 30px */
+            padding-top: inherit;
+            text-align: center;
+
+            /* Text UI/Verde Cinza */
+
+            color: #4f5a72;
+        }
+
+
+        .button {
+            transform: translateY(-40px);
+        }
+
+        .butn {
+            width: 200px;
+            height: 45px;
+            background: #389DFF;;
+            border-radius: 4px;
+
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 125%;
+            /* identical to box height, or 30px */
+
+            text-align: center;
+
+            /* Text UI/Branco */
+
+            color: #FFFFFF;
+        }
+
+        @media screen {
+
+            .row-cols-lg-3>* {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+
+        svg{
+            transition: all 1s;
+        }
+        svg:hover{
+            transform: scale(1.1);
+            border: solid 4px #016cd8;
+            
+        } 
+        .card:hover{
+            transform:scale(1.05);
+            box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.5);
+        }
+      
+      
+/* 
+        @media (min-width: 1310px) {
+
+            .row-cols-lg-3>* {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+
+        @media (min-width: 1073px) and (max-width: 1311px) {
+
+            .row-cols-lg-3>* {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1072px) {
+
+            .row-cols-lg-3>* {
+                margin-inline: 20px;
+                align-items: center;
+
+            }
+        }
+
+        @media (min-width: 378px) and (max-width: 991px) {
+
+            .row-cols-lg-3>* {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+        } */
+    </style>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <section class="py-5 text-center container-fluid">
+        <div class="row head py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">WHAT'S YOUR ROLE?</h1>
+                <br>
+                <h2 class="fw-light registration">USER REGISTRATION</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="row cardrow row-cols-1 row-cols-md-2 row-cols-lg-3 g-3  ">
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">E-Waste Donator</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Junk Dealer</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Junk Collector</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Recycling Plant</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">NGO</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <svg class="bd-placeholder-img rounded-circle" width="157" height="157"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#FFFFFF"></rect><text x="50%" y="50%" fill="#777"
+                        dy=".3em"></text>
+                </svg>
+                <div class="line1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Authority</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt
+                        ut labore adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="button"><a href="#" class="btn btn-success butn">KNOW MORE</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>
+
+{% endblock body %}
