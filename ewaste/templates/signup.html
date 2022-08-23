@@ -43,9 +43,16 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingAadhaar" name = "aadhaarnumber" placeholder="xxxx xxxx xxxx xxxx">
-                        <label for="floatingAadhaar">Aadhaar No.</label>
-                    </div>
+                        <select type="text" class="form-control" id="role" name = "role"  style="text-align: center; ">
+                          <option value="NULL">Select Role</option>
+                          <option value="Donator">Donator</option>
+                          <option value="Junk Collector">Junk Collector</option>
+                          <option value="NGO">NGO</option>
+                          <option value="Office">Office</option>
+                          <option value="Dealer">Dealer</option>
+                          <option value="Recycling Plant">Recycling Plant</option>
+                        </select>
+                      </div>
 
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingPassword" name = "password" placeholder="Password">
@@ -111,3 +118,4 @@ body{
     font-size: 11px;
 }
 
+</style>

@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+from logging import RootLogger
 from django.shortcuts import render , HttpResponse,redirect
 from myapp.models import Dform
 from django.contrib.auth.forms import User
@@ -25,7 +26,7 @@ def signup(request):
       name = request.POST.get("name") 
       username = request.POST.get("username")
       email =  request.POST.get("email")
-      aadhaarno = request.POST.get("aadhaarnumber")
+      role = request.POST.get("role")
       password = request.POST.get("password")
       confirmpassword = request.POST.get("confirmpassword")
       if User.objects.filter(username=username):
@@ -49,7 +50,7 @@ def signup(request):
             return redirect('signup')  
       myuser = User.objects.create_user(username,email,password)
       myuser.save()
-      signup = extendeduser(name = name,email = email,username = username,aadhaar_no = aadhaarno,password=password)
+      signup = extendeduser(name = name,email = email,username = username,role = role,password=password)
       signup.save()
      
       messages.success(request,"your account has been successfully created")
