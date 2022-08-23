@@ -1,6 +1,6 @@
 from http.client import HTTPResponse
 from django.shortcuts import render , HttpResponse,redirect
-from myapp.models import Donor_form
+from myapp.models import Dform
 from django.contrib.auth.forms import User
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
@@ -80,7 +80,7 @@ def notifications(request):
     return render(request,'notifications.html')
 
 
-def donor_form(request):
+def dform(request):
     if request.method == "POST":
         email = request.POST.get('email')
         address1 = request.POST.get('address1')
@@ -91,14 +91,19 @@ def donor_form(request):
         state = request.POST.get('state')
         pincode = request.POST.get('pincode')
         contact_no = request.POST.get('contact_no')
-        size = request.POST.get('size')
-        quantity = request.POST.get('quantity')
         date_s = request.POST.get('date_s')
         time = request.POST.get('time')
-        e_img = request.POST.get('e_img')
-        donor_form = Donor_form(email=email, address1=address1, address2=address2, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no ,size=size ,quantity=quantity ,date_s=date_s ,time=time, e_img=e_img, date=datetime.today())  
-        donor_form.save()
-    return render(request,'donor_form.html')
+        ename = request.POST.get('ename')
+        quantity = request.POST.get('quantity')
+        EwasteType = request.POST.get('EwasteType')
+        size = request.POST.get('size')
+        weight = request.POST.get('weight')
+        e_img1 = request.POST.get('e_img1')
+        e_img2 = request.POST.get('e_img2')
+        e_img3 = request.POST.get('e_img3')
+        dform = Dform(email=email, address1=address1, address2=address2, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no ,ename=ename, EwasteType = EwasteType, size=size ,quantity=quantity ,date_s=date_s ,time=time, weight=weight, e_img1=e_img1, e_img2=e_img2, e_img3=e_img3, date=datetime.today())  
+        dform.save()
+    return render(request,'dform.html')
 
 def dashboard(request):
         return render(request,'dashboard.html')
