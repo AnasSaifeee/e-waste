@@ -7,6 +7,7 @@ from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
 from .models import extendeduser
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -106,5 +107,7 @@ def dform(request):
         dform.save()
     return render(request,'dform.html')
 
+@login_required(login_url='/signin/')
 def dashboard(request):
-        return render(request,'dashboard.html')
+    datas=extendeduser.objects.all()
+    return render(request,'dashboard.html',{'data':datas})
