@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>cms dashboard
+    </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!--css3-->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+    <div class="wrapper">
+
+
+        <div class="body-overlay"></div>
+
+
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+                    width="80px" class="rounded-circle" alt="" style="margin-left:60px;">
+                <button type="button" class="btn" style="height:25px; line-height: 10px; margin-left: 35px;transform: translateY(8px); background-color: grey; color: white;">Update
+                    Profile</button>
+            </div>
+
+            <ul class="list-unstyled components">
+                <div class="small-screen navbar-display">
+                    <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+                        <form class="d-flex ">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button type="button" class="btn btn-success" style="height:38px; margin-left:2px;"><i
+                                    class="material-icons">search</i></button>
+                        </form>
+                    </li>
+
+                </div>
+                <li class="active">
+                    <a href="#" class="dashboard"><i class="material-icons">dashboard</i><span>Overview</span></a>
+                </li>
+                <div class="small-screen navbar-display">
+                    <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+                        <a href="#">
+                            <i class="material-icons">notifications</i><span> 4 notifications</span></a>
+                    </li>
+                </div>
+                <li>
+                    <a href="post" class="dashboard"><i
+                            class="material-icons">data_saver_on</i><span>Post something</span></a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#" class="dashboard"><i class="material-icons">settings</i><span>Settings</span></a>
+                </li>
+                <li>
+                    <a href="#" class="dashboard"><i class="material-icons">logout</i><span>Logout</span></a>
+                </li>
+            </ul>
+
+        </nav>
+
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <div class="top-navbar">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+
+                       
+
+                        <a class="navbar-brand" href="#"> Dashboard </a>
+
+                        <button class="d-inline-block d-lg-none ml-auto more-button" type="button"
+                            data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="material-icons">more_vert</span>
+                        </button>
+
+                        <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
+                            id="navbarSupportedContent">
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <form class="d-flex " style="transform: translateY(6px);">
+                                        <input class="form-control me-2" type="search" placeholder="Search"
+                                            aria-label="Search">
+                                    </form>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="material-icons">search</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="#">
+                                        <span class="material-icons">notifications</span>
+                                        <span class="notification">4</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link user-name" href="#">{{data.name}}
+                                        <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+                                            width="30px" class="rounded-circle" alt="">
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+            {% block body%} {%endblock body%}
+             <footer class="footer" style="margin-top:35rem ;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <nav class="d-flex">
+                                <ul class="m-0 p-0">
+                                    <li>
+                                        <a href="#">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Company
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Portfolio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Blog
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <div class="col-md-6">
+                            <p class="copyright d-flex justify-content-end"> © 2022 TECHVIORS, All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="static/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/jquery-3.3.1.min.js"></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                    $('#content').toggleClass('active');
+                });
+
+                $('.more-button,.body-overlay').on('click', function () {
+                    $('#sidebar,.body-overlay').toggleClass('show-nav');
+                });
+
+            });
+
+
+
+
+
+        </script>
+
+
+
+
+
+</body>
+
+</html>

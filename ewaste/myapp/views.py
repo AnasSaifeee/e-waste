@@ -126,6 +126,12 @@ def requestcollector(request):
             'item_list' : item_list
         }
         return render(request,'requestcollector.html',context)
+
+def dashboard3(request):
+    return render(request,"dashboard3.html")
+
+def post(request):
+    return render(request,"post.html")
    
 def profile(request):
     if request.method == "POST":
