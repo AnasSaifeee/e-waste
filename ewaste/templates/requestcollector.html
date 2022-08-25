@@ -1,0 +1,126 @@
+{% extends 'dashboard.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>updateDform</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Fengyuan Chen's Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"
+        integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"
+        integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    {% for i in item_list %}
+
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="email" class="form-label">Email ID</label>
+                    <div>{{i.email}}</div>
+                </div>
+                <div class="col-12">
+                    <label for="address1" class="form-label">Address</label>
+                    <div>{{i.address1}}</div>
+                </div>
+                <div class="col-12">
+                    <label for="address2" class="form-label"></label>
+                    <div>{{i.address2}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="district" class="form-label">District</label>
+                    <div>{{i.district}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="city" class="form-label">City</label>
+                    <div>{{i.city}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="state" class="form-label">State</label>
+                    <div>{{i.state}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="pincode" class="form-label">Pincode</label>
+                    <div>
+                       {{ i.pincode}}
+                    </div>
+                </div>
+
+
+                <div class="col-12">
+                    <label for="contact_no" class="form-label">Contact Number</label>
+                    <div>{{i.contact_no}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="date_s" class="form-label">Date of pick-up</label>
+                    <div>{{i.date_s}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="time" class="form-label">Choose Time for pick-up</label><br>
+                    <div>{{i.time}}</div>
+                </div>
+                <div class="col-12">
+                    <h5>Ewaste Detail:</h5>
+                    <h6> Item 1:</h6>
+                </div>
+                <div class="col-12">
+                    <label for="ename" class="form-label">Ewaste Name</label>
+
+                    <div>{{i.ename}}</div>
+                    <label for="quantity" class="form-label">quantity</label>
+                    <div>{{i.quantity}}</div>
+                </div>
+                <div class="col-12">
+                    <label for="EwasteType" class="form-label">Ewaste Type</label>
+                    <div>{{i.EwasteType}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="size" class="form-label">E-waste Size</label><br>
+                    <div>{{i.size}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="weight" class="form-label">Ewaste Weight</label>
+                    <div>{{i.weight}}</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="e_img" class="form-label">Upload image</label>
+                    <div class="col-md-6 mb-4">
+                        <div>
+                        {{i.e_img}}
+                        </div>
+                        <div>{{i.e_img2}}</div>
+                        <div>{{i.e_img3}}</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-success btn-lg" type="">Accept</button>
+                    <button class="btn btn-danger btn-lg" type="submit">Decline</button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock body %}
