@@ -25,6 +25,13 @@
    
 </style>
 <body>
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role='alert>'>
+        <strong>Message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    {% endfor %}
   <div class ="container">
     <form class="needs-validation"  method="post" action="/dform">
         {% csrf_token %}
@@ -134,10 +141,10 @@
                 <label for="size" class="form-label">E-waste Size</label><br>
                  <select class="browser-default custom-select" name="size">
                     <option selected></option>
-                    <option value="1">>=50 inch</option>
-                    <option value="2">50 inch to 100 inch</option>
-                    <option value="2">100 inch to 150 inch</option>
-                    <option value="2">others</option>
+                    <option value="1">0*0*0 cm to 50*50*50 cm</option>
+                    <option value="2">50*50*50 cm to 250*250*250 cm</option>
+                    <option value="3">250*250*250 cm to 500*500*500 cm</option>
+                    <option value="4">others</option>
                 </select>
             </div>     
             
@@ -153,7 +160,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="file-field">
                         <div class="btn btn-mdb-color btn-rounded float-left">
-                            <input type="file" name="e_img1" id="e_img1">
+                            <input type="file" name="e_img" id="e_img">
                         </div>
                         <div class="btn btn-mdb-color btn-rounded float-left">
                             <input type="file" name="e_img2" id="e_img2">
