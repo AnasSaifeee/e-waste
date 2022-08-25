@@ -25,7 +25,7 @@
    
 </style>
 <body>
-  <div class = container>
+  <div class ="container">
     <form class="needs-validation"  method="post" action="/dform">
         {% csrf_token %}
         <div class="row g-3">
@@ -94,7 +94,7 @@
             <div class="col-12">
                 <label for="date_s" class="form-label">Choose Date for pick-up</label>
                 <br>
-                <input id="datepicker" name="date_s">
+                <input type="date" id="datepicker" name="date_s">
             </div>
 
             <div class = "col-12">
