@@ -107,7 +107,7 @@ def dform(request):
         dform.save()
     return render(request,'dform.html')
 
-@login_required(login_url='/signin/')
+# @login_required(login_url='/signin/')
 def dashboard(request):
-    datas=extendeduser.objects.all()
-    return render(request,'dashboard.html',{'data':datas})
+    data=extendeduser.objects.get(username = request.user.username)
+    return render(request,'dashboard.html',{'data':data})
