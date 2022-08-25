@@ -3,6 +3,7 @@ from logging import RootLogger
 from django.shortcuts import render , HttpResponse,redirect
 from myapp.models import Dform
 from django.contrib.auth.forms import User
+from myapp.models import Requestcollector
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
@@ -111,13 +112,21 @@ def dform(request):
         EwasteType = request.POST.get('EwasteType')
         size = request.POST.get('size')
         weight = request.POST.get('weight')
-        e_img1 = request.POST.get('e_img1')
+        e_img = request.POST.get('e_img1')
         e_img2 = request.POST.get('e_img2')
         e_img3 = request.POST.get('e_img3')
-        dform = Dform(email=email, address1=address1, address2=address2, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no ,ename=ename, EwasteType = EwasteType, size=size ,quantity=quantity ,date_s=date_s ,time=time, weight=weight, e_img1=e_img1, e_img2=e_img2, e_img3=e_img3, date=datetime.today())  
+        dform = Dform(email=email, address1=address1, address2=address2, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no ,ename=ename, EwasteType = EwasteType, size=size ,quantity=quantity ,date_s=date_s ,time=time, weight=weight, e_img=e_img, e_img2=e_img2, e_img3=e_img3, date=datetime.today())  
         dform.save()
+        messages.success(request,"Your For has been submitted succesfully")
     return render(request,'dform.html')
 
+def requestcollector(request):
+        item_list = Dform.objects.all()
+        context = {
+            'item_list' : item_list
+        }
+        return render(request,'requestcollector.html',context)
+   
 def profile(request):
     if request.method == "POST":
         address = request.POST.get('address')
