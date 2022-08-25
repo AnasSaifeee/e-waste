@@ -82,6 +82,12 @@ def login2(request):
 def notifications(request):
     return render(request,'notifications.html')
 
+def order_details(request):
+    return render(request,'order_details.html')
+
+def dashboard2(request):
+    return render(request,'dashboard2.html')
+
 
 def dform(request):
     if request.method == "POST":
