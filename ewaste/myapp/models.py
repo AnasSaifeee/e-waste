@@ -36,6 +36,16 @@ class Dform(models.Model):
     e_img3 = models.FileField(upload_to='', storage=None, max_length=100)
     date = models.DateField()
 
+class Profile(models.Model):
+    address=models.CharField(max_length= 122)
+    district = models.CharField(max_length = 122)
+    city = models.CharField(max_length = 122)
+    state = models.CharField(max_length = 122)
+    pincode = models.CharField(max_length = 122)
+    contact_no =models.CharField(max_length = 12)
+    def __str__(self):
+        return self.pincode
+
 
 
 # class Donator(models.Model):
