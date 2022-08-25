@@ -89,9 +89,6 @@ def notifications(request):
 def order_details(request):
     return render(request,'order_details.html')
 
-def dashboard2(request):
-    return render(request,'dashboard2.html')
-
 def notifications2(request):
     return render(request,'notifications2.html')
 
@@ -121,7 +118,11 @@ def dform(request):
         dform.save()
     return render(request,'dform.html')
 
-# @login_required(login_url='/signin/')
+#@login_required(login_url='/signin/')
 def dashboard(request):
-    data=extendeduser.objects.get(username = request.user.username)
+    data=extendeduser.objects.get(username = request.user)
     return render(request,'dashboard.html',{'data':data})
+
+def dashboard2(request):
+    data=extendeduser.objects.get(username = request.user)
+    return render(request,'dashboard2.html',{'data':data})
