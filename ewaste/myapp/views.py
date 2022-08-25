@@ -6,7 +6,7 @@ from django.contrib.auth.forms import User
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
-from .models import extendeduser
+from .models import extendeduser, Profile
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
@@ -117,6 +117,19 @@ def dform(request):
         dform = Dform(email=email, address1=address1, address2=address2, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no ,ename=ename, EwasteType = EwasteType, size=size ,quantity=quantity ,date_s=date_s ,time=time, weight=weight, e_img1=e_img1, e_img2=e_img2, e_img3=e_img3, date=datetime.today())  
         dform.save()
     return render(request,'dform.html')
+
+def profile(request):
+    if request.method == "POST":
+        address = request.POST.get('address')
+        district = request.POST.get('district')
+        city = request.POST.get('city')
+        district = request.POST.get('district')
+        state = request.POST.get('state')
+        pincode = request.POST.get('pincode')
+        contact_no = request.POST.get('contact_no')
+        profile = Profile(address= address, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no )  
+        profile.save()
+    return render(request,'profile.html')
 
 #@login_required(login_url='/signin/')
 def dashboard(request):
