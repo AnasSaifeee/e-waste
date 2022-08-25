@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
 from .models import extendeduser
 from django.contrib.auth.decorators import login_required
-
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -67,7 +67,8 @@ def signin(request):
       user = authenticate(username=username,password=password)
       if user is not None:
          login(request,user)
-         return render(request,"dashboard.html")
+         return redirect("/dashboard")
+        #  return render(request,"dashboard.html")
       else:
          return redirect(signin)
    return render(request,"signin.html")
