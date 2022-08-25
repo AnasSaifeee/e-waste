@@ -65,11 +65,10 @@ def signin(request):
       password = request.POST['password']
       
       user = authenticate(username=username,password=password)
-      role1=extendeduser.object.get(request.user.username)
-
+      userdata=extendeduser.objects.get(username=user)
       if user is not None:
          login(request,user)
-         if role1.role=="Donator":
+         if userdata.role=="Donator":
              return redirect(dashboard)
          else:
             return redirect(dashboard2)
