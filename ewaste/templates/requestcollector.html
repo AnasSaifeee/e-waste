@@ -1,4 +1,4 @@
-{% extends 'dashboard.html' %}
+{% extends 'dashboard2.html' %}
 {% block body %}
 
 <!DOCTYPE html>
@@ -27,83 +27,70 @@
         <div class="container">
             <div class="row g-3">
                 <div class="col-12">
-                    <label for="email" class="form-label">Email ID</label>
-                    <div>{{i.email}}</div>
+                    <label for="email" class="form-label"> <strong>Email ID :</strong> {{i.email}}
+                    </label>
+                    
                 </div>
                 <div class="col-12">
-                    <label for="address1" class="form-label">Address</label>
-                    <div>{{i.address1}}</div>
+                    <label for="address1" class="form-label"> <strong> Address1 :</strong>{{i.address1}}</label>
+                    
                 </div>
                 <div class="col-12">
-                    <label for="address2" class="form-label"></label>
-                    <div>{{i.address2}}</div>
-                </div>
-
-                <div class="col-12">
-                    <label for="district" class="form-label">District</label>
-                    <div>{{i.district}}</div>
+                    <label for="address2" class="form-label"><strong>Address2 :</strong>{{i.address2}}</label>
+                    
                 </div>
 
                 <div class="col-12">
-                    <label for="city" class="form-label">City</label>
-                    <div>{{i.city}}</div>
+                    <label for="district" class="form-label"><strong>District :</strong>{{i.district}}</label>
+                    
                 </div>
 
                 <div class="col-12">
-                    <label for="state" class="form-label">State</label>
-                    <div>{{i.state}}</div>
+                    <label for="city" class="form-label"><strong>City :</strong>{{i.city}}</label>
                 </div>
 
                 <div class="col-12">
-                    <label for="pincode" class="form-label">Pincode</label>
-                    <div>
-                       {{ i.pincode}}
-                    </div>
-                </div>
-
-
-                <div class="col-12">
-                    <label for="contact_no" class="form-label">Contact Number</label>
-                    <div>{{i.contact_no}}</div>
+                    <label for="state" class="form-label"><strong>State :</strong></label>{{i.state}}
                 </div>
 
                 <div class="col-12">
-                    <label for="date_s" class="form-label">Date of pick-up</label>
-                    <div>{{i.date_s}}</div>
+                    <label for="pincode" class="form-label"><strong>Pincode :</strong>{{ i.pincode}}</label>
+                </div>
+                <div class="col-12">
+                    <label for="contact_no" class="form-label"><strong>Contact Number :</strong>{{i.contact_no}}</label>
                 </div>
 
                 <div class="col-12">
-                    <label for="time" class="form-label">Choose Time for pick-up</label><br>
-                    <div>{{i.time}}</div>
-                </div>
-                <div class="col-12">
-                    <h5>Ewaste Detail:</h5>
-                    <h6> Item 1:</h6>
-                </div>
-                <div class="col-12">
-                    <label for="ename" class="form-label">Ewaste Name</label>
-
-                    <div>{{i.ename}}</div>
-                    <label for="quantity" class="form-label">quantity</label>
-                    <div>{{i.quantity}}</div>
-                </div>
-                <div class="col-12">
-                    <label for="EwasteType" class="form-label">Ewaste Type</label>
-                    <div>{{i.EwasteType}}</div>
+                    <label for="date_s" class="form-label"><strong>pick-up date :</strong>{{i.date_s}}</label>
                 </div>
 
                 <div class="col-12">
-                    <label for="size" class="form-label">E-waste Size</label><br>
-                    <div>{{i.size}}</div>
+                    <label for="time" class="form-label"><strong>pick-up time : </strong>{{i.time}}</label><br>
+                </div>
+                <div class="col-12">
+                    <strong><h5>Ewaste Detail:</h5></strong>
+                    <strong><h6> Item 1:</h6></strong>
+                </div>
+                <div class="col-12">
+                    <label for="ename" class="form-label"><strong>Ewaste Name :</strong>{{i.ename}}</label>
+                </div>
+                <div class="col-12">
+                    <label for="quantity" class="form-label"><strong>quantity :</strong>{{i.quantity}}</label>
+                </div>
+                <div class="col-12">
+                    <label for="EwasteType" class="form-label"><strong>Ewaste Type :</strong>{{i.EwasteType}}</label>
                 </div>
 
                 <div class="col-12">
-                    <label for="weight" class="form-label">Ewaste Weight</label>
-                    <div>{{i.weight}}</div>
+                    <label for="size" class="form-label"><strong>E-waste Size :</strong>{{i.size}}</label><br>
                 </div>
 
                 <div class="col-12">
-                    <label for="e_img" class="form-label">Upload image</label>
+                    <label for="weight" class="form-label"><strong>Ewaste Weight</strong>{{i.weight}}</label>
+                </div>
+
+                <div class="col-12">
+                    <label for="e_img" class="form-label"><strong>E-Waste photos</strong></label>
                     <div class="col-md-6 mb-4">
                         <div>
                         {{i.e_img}}
