@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'ewaste.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
          'NAME':'ewaste',
         'USER' :'root',
         'PASSWORD':'root12345',
