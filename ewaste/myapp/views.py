@@ -88,6 +88,9 @@ def order_details(request):
 def dashboard2(request):
     return render(request,'dashboard2.html')
 
+def notifications2(request):
+    return render(request,'notifications2.html')
+
 
 def dform(request):
     if request.method == "POST":
