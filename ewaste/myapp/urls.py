@@ -18,6 +18,7 @@ urlpatterns = [
     path("order_details",views.order_details,name='order_details'),
     path("dashboard2",views.dashboard2,name='dashboard2'),
      path("dashboard3",views.dashboard3,name='dashboard3'),
+     path("dashboard4",views.dashboard4,name='dashboard4'),
      path("post",views.post,name='post'),
     path("notifications2",views.notifications2,name='notifications2')
 ]

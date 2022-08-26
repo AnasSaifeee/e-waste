@@ -133,6 +133,10 @@ def requestcollector(request):
 def dashboard3(request):
     return render(request,"dashboard3.html")
 
+def dashboard4(request):
+    return render(request,"dashboard4.html")
+
+
 def post(request):
     return render(request,"post.html")
    
