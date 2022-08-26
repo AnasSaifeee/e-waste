@@ -4,6 +4,7 @@ from django.shortcuts import render , HttpResponse,redirect
 from myapp.models import Dform, Collector,UserRole
 from django.contrib.auth.forms import User
 from myapp.models import Requestcollector
+from myapp.models import Events
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
@@ -61,6 +62,7 @@ def signup(request):
           signup.save()
           userrole = UserRole(role=role,username=username)
           userrole.save()
+     
       messages.success(request,"your account has been successfully created")
       return redirect('signin')
       
@@ -131,11 +133,33 @@ def requestcollector(request):
         }
         return render(request,'requestcollector.html',context)
 
-def dashboard3(request):
-    return render(request,"dashboard3.html")
+
+def dashboard4(request):
+    return render(request,"dashboard4.html")
+
 
 def post(request):
     return render(request,"post.html")
+   
+def events(request):
+    if request.method == "POST":
+        coordinator_name = request.POST.get('coordinator_name')
+        coordinator_phone = request.POST.get('coordinator_phone')
+        coordinator_email = request.POST.get('coordinator_email')
+        event_name = request.POST.get('event_name')
+        event_desc = request.POST.get('event_desc')
+        venue = request.POST.get('venue')
+        event_date = request.POST.get('event_date')
+        time = request.POST.get('time')
+        events = Events(coordinator_name=coordinator_name, coordinator_phone=coordinator_phone, coordinator_email=coordinator_email, event_name=event_name ,event_desc=event_desc ,venue=venue ,event_date=event_date ,time=time , date=datetime.today())  
+        events.save()
+        messages.success(request,"Request sent")
+    return render(request,'dform.html')
+
+
+def searchngo(request):
+    
+    return render(request,"searchngo.html")
    
 def profile(request):
     if request.method == "POST":
@@ -153,8 +177,13 @@ def profile(request):
 
 #@login_required(login_url='/signin/')
 def dashboard(request):
-    data= Contributor.objects.get(username = request.user)
+    data=extendeduser.objects.get(username = request.user.username)
     return render(request,'dashboard.html',{'data':data})
 
 def dashboard2(request):
-    return render(request,'dashboard2.html')
+    data=extendeduser.objects.get(username = request.user.username)
+    return render(request,'dashboard2.html',{'data':data})
+
+def dashboard3(request):
+    data=extendeduser.objects.get(username = request.user.username)
+    return render(request,'dashboard3.html',{'data':data})

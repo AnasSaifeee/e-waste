@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn.btn-primary.btn-lg{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role='alert>'>
+        {{message}}<span class="material-icons" style="transform:translateY(5px);">
+            done
+            </span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endfor %}
+<h2>SCHEDULE EVENT</h2>
+  <div class ="container">
+    <form class="needs-validation"  method="post" action="/events">
+        {% csrf_token %}
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="coordinator_name" class="form-label">Name of Event Coordinator</label>
+                <input type="text" class="form-control" name="coordinator_name" id="coordinator_name" required>
+                <div class="invalid-feedback">
+                    Please enter Event Coordinator 
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="coordinator_phone" class="form-label">Contact No. of Event Coordinator</label>
+                <input type="phone" class="form-control" name="coordinator_phone" id="coordinator_phone" required>
+                <div class="invalid-feedback">
+                    Please enter coordinator's contact number
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="coordinator_email" class="form-label">Email ID</label>
+                <input type="email" class="form-control" name="coordinator_phone" id="coordinator_phone" required>
+                <div class="invalid-feedback">
+                    Please enter email address
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="event_name" class="form-label">Name of Event</label>
+                <input type="text" class="form-control" name="event_name" id="event_name" required>
+                <div class="invalid-feedback">
+                    Please enter Event Name.
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="event_desc" class="form-label">Event Details</label>
+                <textarea class="form-control" placeholder="write something" id="event_desc" style="height: 100px"></textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="venue" class="form-label">Venue</label>
+                <input type="text" class="form-control" name="venue" id="venue"required>
+            </div>
+
+
+            <div class="col-12">
+                <label for="event_date" class="form-label">Event Date</label>
+                <br>
+                <input type="date" id="datepicker" name="event_date">
+            </div>
+
+            <div class = "col-12">
+                <label for="time" class="form-label">Choose Time for pick-up</label><br>
+                 <select class="browser-default custom-select" name="time">
+                    <option selected></option>
+                    <option value="10 AM - 1 PM">10 AM - 1 PM</option>
+                    <option value="1 PM - 4 PM">1 PM - 4 PM</option>
+                    <option value="4 PM - 7 PM">4 PM - 7 PM</option>
+                </select>
+            </div>  
+           
+        <div class = "col-12">
+             <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+        </div>
+    </form>
+  </div>
+
+
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+            
+</body>
+</html>
+{% endblock body %}
