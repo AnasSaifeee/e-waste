@@ -8,7 +8,7 @@ class UserRole(models.Model):
      username = models.CharField(max_length = 20,null = True)
      role= models.CharField(max_length=20, null = True)
      def __str__(self):
-        return self.username
+        return self.username + " - " + role
 class Contributor(models.Model):
      name = models.CharField(max_length=20)
      role= models.CharField(max_length=20, null = True)
@@ -16,7 +16,16 @@ class Contributor(models.Model):
      password = models.CharField(max_length = 20,null = True)
      username = models.CharField(max_length = 20,null = True)
      def __str__(self):
-        return self.username
+        return self.username + "(Contributor)"
+    
+class Collector(models.Model):
+     name = models.CharField(max_length=20)
+     role= models.CharField(max_length=20, null = True)
+     email =  models.CharField(max_length = 12,null= True)
+     password = models.CharField(max_length = 20,null = True)
+     username = models.CharField(max_length = 20,null = True)
+     def __str__(self):
+        return self.username + "(Collector)"
 
 class Dform(models.Model):
     email =models.CharField(max_length = 122)

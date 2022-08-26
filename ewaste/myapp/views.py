@@ -1,14 +1,14 @@
 from http.client import HTTPResponse
 from logging import RootLogger
 from django.shortcuts import render , HttpResponse,redirect
-from myapp.models import Dform, Collector,UserRole
+from myapp.models import Dform,UserRole
 from django.contrib.auth.forms import User
 from myapp.models import Requestcollector
 from myapp.models import Events
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
-from .models import Contributor, Profile
+from .models import Contributor, Profile,Collector
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
@@ -58,8 +58,8 @@ def signup(request):
          userrole = UserRole(role=role,username=username)
          userrole.save()
       elif role == "Junk Collector":
-          signup = Collector(name = name,email = email,username = username,role = role,password=password)
-          signup.save()
+          signup2 = Collector(name = name,email = email,username = username,role = role,password=password)
+          signup2.save()
           userrole = UserRole(role=role,username=username)
           userrole.save()
      
@@ -177,13 +177,13 @@ def profile(request):
 
 #@login_required(login_url='/signin/')
 def dashboard(request):
-    data=extendeduser.objects.get(username = request.user.username)
+    data=UserRole.objects.get(username = request.user.username)
     return render(request,'dashboard.html',{'data':data})
 
 def dashboard2(request):
-    data=extendeduser.objects.get(username = request.user.username)
+    data=UserRole.objects.get(username = request.user.username)
     return render(request,'dashboard2.html',{'data':data})
 
 def dashboard3(request):
-    data=extendeduser.objects.get(username = request.user.username)
+    data=UserRole.objects.get(username = request.user.username)
     return render(request,'dashboard3.html',{'data':data})
