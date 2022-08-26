@@ -20,5 +20,7 @@ urlpatterns = [
      path("dashboard3",views.dashboard3,name='dashboard3'),
      path("dashboard4",views.dashboard4,name='dashboard4'),
      path("post",views.post,name='post'),
+     path("searchngo",views.searchngo,name='searchngo'),
+    path("events",views.events,name='events'),
     path("notifications2",views.notifications2,name='notifications2')
 ]

@@ -140,6 +140,14 @@ def dashboard4(request):
 def post(request):
     return render(request,"post.html")
    
+def events(request):
+
+    return render(request,"events.html")
+
+def searchngo(request):
+    
+    return render(request,"searchngo.html")
+   
 def profile(request):
     if request.method == "POST":
         address = request.POST.get('address')
