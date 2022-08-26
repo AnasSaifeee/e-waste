@@ -4,6 +4,11 @@ from pydoc import render_doc
 from django.db import models
 from django.contrib.auth.forms import User
 
+class UserRole(models.Model):
+     username = models.CharField(max_length = 20,null = True)
+     role= models.CharField(max_length=20, null = True)
+     def __str__(self):
+        return self.username
 class Contributor(models.Model):
      name = models.CharField(max_length=20)
      role= models.CharField(max_length=20, null = True)

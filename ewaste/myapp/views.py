@@ -1,7 +1,7 @@
 from http.client import HTTPResponse
 from logging import RootLogger
 from django.shortcuts import render , HttpResponse,redirect
-from myapp.models import Dform, Collector
+from myapp.models import Dform, Collector,UserRole
 from django.contrib.auth.forms import User
 from myapp.models import Requestcollector
 from datetime import datetime
@@ -14,7 +14,6 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
-   
     return render(request,'index.html')
 
 def about(request):
@@ -55,31 +54,33 @@ def signup(request):
       if role == "Donator":
          signup = Contributor(name = name,email = email,username = username,role = role,password=password)
          signup.save()
+         userrole = UserRole(role=role,username=username)
+         userrole.save()
       elif role == "Junk Collector":
           signup = Collector(name = name,email = email,username = username,role = role,password=password)
           signup.save()
+          userrole = UserRole(role=role,username=username)
+          userrole.save()
       messages.success(request,"your account has been successfully created")
       return redirect('signin')
       
    return render(request,"signup.html")
 
 def signin(request):
-   if request.method == 'POST':
-      username = request.POST['username']
-      password = request.POST['password']
-      
-      user = authenticate(username=username,password=password)
-      userdata= Collector.objects.get(username=user)
-      if user is not None:
-         login(request,user)
-         if userdata.role=="Junk Collector":
-             return redirect(dashboard2)
-         else:
-            return redirect(dashboard)
-        #  return render(request,"dashboard.html")
-      else:
-         return redirect(signin)
-   return render(request,"signin.html")
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username,password=password)
+        if(user is None):
+            return redirect(signin)
+        else:
+            forUserRole = UserRole.objects.get(username = user)
+            login(request,user)
+            if forUserRole.role=="Junk Collector":
+                return redirect(dashboard2)
+            else:
+                return redirect(dashboard)
+    return render(request,"signin.html")
 
 def guidelines(request):
     return render(request,'guidelines.html')
