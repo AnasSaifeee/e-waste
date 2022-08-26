@@ -53,12 +53,9 @@ def signup(request):
             return redirect('signup')  
       myuser = User.objects.create_user(username,email,password)
       myuser.save()
-      if role == "Donator":
-         signup = Contributor(name = name,email = email,username = username,role = role,password=password)
-         signup.save()
-      elif role == "Junk Collector":
-          signup = Collector(name = name,email = email,username = username,role = role,password=password)
-          signup.save()
+      signup = extendeduser(name = name,email = email,username = username,role = role,password=password)
+      signup.save()
+     
       messages.success(request,"your account has been successfully created")
       return redirect('signin')
       
@@ -70,17 +67,19 @@ def signin(request):
       password = request.POST['password']
       
       user = authenticate(username=username,password=password)
-      userdata= Collector.objects.get(username=user)
+      userdata=extendeduser.objects.get(username=user)
       if user is not None:
          login(request,user)
-         if userdata.role=="Junk Collector":
-             return redirect(dashboard2)
+         if userdata.role=="Donator":
+             return redirect(dashboard)
+         elif userdata.role=="Junk Collector": 
+            return redirect(dashboard2)
          else:
-            return redirect(dashboard)
+             return redirect(dashboard3)
         #  return render(request,"dashboard.html")
       else:
          return redirect(signin)
-   return render(request,"signin.html")
+  return render(request,"signin.html")
 
 def guidelines(request):
     return render(request,'guidelines.html')
@@ -131,8 +130,6 @@ def requestcollector(request):
         }
         return render(request,'requestcollector.html',context)
 
-def dashboard3(request):
-    return render(request,"dashboard3.html")
 
 def dashboard4(request):
     return render(request,"dashboard4.html")
@@ -177,8 +174,13 @@ def profile(request):
 
 #@login_required(login_url='/signin/')
 def dashboard(request):
-    data= Contributor.objects.get(username = request.user)
+    data=extendeduser.objects.get(username = request.user.username)
     return render(request,'dashboard.html',{'data':data})
 
 def dashboard2(request):
-    return render(request,'dashboard2.html')
+    data=extendeduser.objects.get(username = request.user.username)
+    return render(request,'dashboard2.html',{'data':data})
+
+def dashboard3(request):
+    data=extendeduser.objects.get(username = request.user.username)
+    return render(request,'dashboard3.html',{'data':data})
