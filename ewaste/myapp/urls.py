@@ -22,6 +22,6 @@ urlpatterns = [
      path("post",views.post,name='post'),
      path("searchngo",views.searchngo,name='searchngo'),
     path("events",views.events,name='events'),
-    path("notifications2",views.notifications2,name='notifications2')
+    path("notifications2",views.notifications2,name='notifications2'),
     path("requestngo",views.requestngo,name='requestngo'),
 ]
