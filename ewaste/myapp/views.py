@@ -151,11 +151,17 @@ def events(request):
         venue = request.POST.get('venue')
         event_date = request.POST.get('event_date')
         time = request.POST.get('time')
-        events = Events(coordinator_name=coordinator_name, coordinator_phone=coordinator_phone, coordinator_email=coordinator_email, event_name=event_name ,event_desc=event_desc ,venue=venue ,event_date=event_date ,time=time , date=datetime.today())  
+        events = Events(coordinator_name=coordinator_name, coordinator_phone=coordinator_phone, coordinator_email=coordinator_email, event_name=event_name ,event_desc=event_desc ,venue=venue ,event_date=event_date ,time=time )   
         events.save()
         messages.success(request,"Request sent")
-    return render(request,'dform.html')
+    return render(request,'events.html')
 
+def requestngo(request):
+        item_list = Events.objects.all()
+        context = {
+            'item_list' : item_list
+        }
+        return render(request,'requestngo.html',context)
 
 def searchngo(request):
     
