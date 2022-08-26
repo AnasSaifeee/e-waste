@@ -144,6 +144,7 @@ def profile(request):
         contact_no = request.POST.get('contact_no')
         profile = Profile(address= address, district=district ,city=city ,state=state ,pincode=pincode ,contact_no=contact_no )  
         profile.save()
+        messages.success(request,"Profile Verified")
     return render(request,'profile.html')
 
 #@login_required(login_url='/signin/')
