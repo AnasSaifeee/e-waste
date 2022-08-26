@@ -4,16 +4,15 @@ from pydoc import render_doc
 from django.db import models
 from django.contrib.auth.forms import User
 
-class Contributor(models.Model):
-     name = models.CharField(max_length=20)
-     role= models.CharField(max_length=20, null = True)
-     email =  models.CharField(max_length = 12,null= True)
-     password = models.CharField(max_length = 20,null = True)
-     username = models.CharField(max_length = 20,null = True)
-     def __str__(self):
-        return self.username
+import imp
+from math import degrees
+from pydoc import render_doc
+from django.db import models
+from django.contrib.auth.forms import User
 
-class Collector(models.Model):
+
+class extendeduser(models.Model):
+
      name = models.CharField(max_length=20)
      role= models.CharField(max_length=20, null = True)
      email =  models.CharField(max_length = 12,null= True)
