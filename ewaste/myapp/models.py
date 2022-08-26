@@ -73,8 +73,16 @@ class Profile(models.Model):
     def __str__(self):
         return self.pincode
 
-
-
+class Events(models.Model):
+    coordinator_name = models.CharField(max_length=122)
+    coordinator_phone = models.IntegerField()
+    coordinator_email = models.CharField(max_length = 122)
+    event_name = models.CharField(max_length = 122)
+    event_desc = models.CharField(max_length = 122)
+    venue = models.CharField(max_length = 122)
+    event_date = models.CharField(max_length = 122)
+    time = models.CharField(max_length = 122)
+    
 # class Donator(models.Model):
 #     Donator_Id = models.IntegerField(primary_key=True,null=False)
 #     Name = models.CharField(max_length = 100)

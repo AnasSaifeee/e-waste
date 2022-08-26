@@ -4,6 +4,7 @@ from django.shortcuts import render , HttpResponse,redirect
 from myapp.models import Dform, Collector
 from django.contrib.auth.forms import User
 from myapp.models import Requestcollector
+from myapp.models import Events
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
@@ -141,8 +142,20 @@ def post(request):
     return render(request,"post.html")
    
 def events(request):
+    if request.method == "POST":
+        coordinator_name = request.POST.get('coordinator_name')
+        coordinator_phone = request.POST.get('coordinator_phone')
+        coordinator_email = request.POST.get('coordinator_email')
+        event_name = request.POST.get('event_name')
+        event_desc = request.POST.get('event_desc')
+        venue = request.POST.get('venue')
+        event_date = request.POST.get('event_date')
+        time = request.POST.get('time')
+        events = Events(coordinator_name=coordinator_name, coordinator_phone=coordinator_phone, coordinator_email=coordinator_email, event_name=event_name ,event_desc=event_desc ,venue=venue ,event_date=event_date ,time=time , date=datetime.today())  
+        events.save()
+        messages.success(request,"Request sent")
+    return render(request,'dform.html')
 
-    return render(request,"events.html")
 
 def searchngo(request):
     
