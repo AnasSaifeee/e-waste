@@ -1,13 +1,13 @@
 from http.client import HTTPResponse
 from logging import RootLogger
 from django.shortcuts import render , HttpResponse,redirect
-from myapp.models import Dform
+from myapp.models import Dform, Collector
 from django.contrib.auth.forms import User
 from myapp.models import Requestcollector
 from datetime import datetime
 from django.contrib.auth import authenticate,logout,login
 from django.contrib import messages
-from .models import extendeduser, Profile
+from .models import Contributor, Profile
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
@@ -52,9 +52,12 @@ def signup(request):
             return redirect('signup')  
       myuser = User.objects.create_user(username,email,password)
       myuser.save()
-      signup = extendeduser(name = name,email = email,username = username,role = role,password=password)
-      signup.save()
-     
+      if role == "Donator":
+         signup = Contributor(name = name,email = email,username = username,role = role,password=password)
+         signup.save()
+      elif role == "Junk Collector":
+          signup = Collector(name = name,email = email,username = username,role = role,password=password)
+          signup.save()
       messages.success(request,"your account has been successfully created")
       return redirect('signin')
       
@@ -66,13 +69,13 @@ def signin(request):
       password = request.POST['password']
       
       user = authenticate(username=username,password=password)
-      userdata=extendeduser.objects.get(username=user)
+      userdata= Collector.objects.get(username=user)
       if user is not None:
          login(request,user)
-         if userdata.role=="Donator":
-             return redirect(dashboard)
+         if userdata.role=="Junk Collector":
+             return redirect(dashboard2)
          else:
-            return redirect(dashboard2)
+            return redirect(dashboard)
         #  return render(request,"dashboard.html")
       else:
          return redirect(signin)
@@ -149,9 +152,8 @@ def profile(request):
 
 #@login_required(login_url='/signin/')
 def dashboard(request):
-    data=extendeduser.objects.get(username = request.user)
+    data= Contributor.objects.get(username = request.user)
     return render(request,'dashboard.html',{'data':data})
 
 def dashboard2(request):
-    data=extendeduser.objects.get(username = request.user)
-    return render(request,'dashboard2.html',{'data':data})
+    return render(request,'dashboard2.html')
